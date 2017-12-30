@@ -73,9 +73,9 @@ void vTaskPWMgen (void *argument){
 
 void USART1_IRQHandler (void){
 	
-	if (USART1->SR & USART_CR1_RXNEIE){
+	if (USART1->SR & USART_SR_RXNE){
 		
-		USART1->SR &= ~USART_CR1_RXNEIE;
+		USART1->SR &= ~USART_SR_RXNE;
 		
 		if (USART1->DR == 0x01){GPIOC->BSRR |= GPIO_BSRR_BS8;}
 		if (USART1->DR == 0x02){GPIOC->BSRR |= GPIO_BSRR_BR8;}

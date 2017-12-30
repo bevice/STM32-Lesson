@@ -150,9 +150,9 @@ void USART1_Send_String (char* str){
 
 void USART1_IRQHandler (void){
 	
-	if (USART1->SR & USART_CR1_RXNEIE){
+	if (USART1->SR & USART_SR_RXNE){
 		
-		USART1->SR &= ~USART_CR1_RXNEIE;
+		USART1->SR &= ~USART_SR_RXNE;
 		
 		if (USART1->DR == '0'){
 			

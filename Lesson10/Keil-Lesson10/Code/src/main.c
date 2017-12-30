@@ -116,9 +116,9 @@ void vTaskConvADC (void *argument){
 
 void USART1_IRQHandler (void){
 	
-	if (USART1->SR & USART_CR1_RXNEIE){
+	if (USART1->SR & USART_SR_RXNE){
 		
-		USART1->SR &= ~USART_CR1_RXNEIE;
+		USART1->SR &= ~USART_SR_RXNE;
 		
 	}
 	
@@ -126,9 +126,9 @@ void USART1_IRQHandler (void){
 
 void USART2_IRQHandler (void){
 	
-	if (USART2->SR & USART_CR1_RXNEIE){
+	if (USART2->SR & USART_SR_RXNE){
 		
-		USART2->SR &= ~USART_CR1_RXNEIE;
+		USART2->SR &= ~USART_SR_RXNE;
 		
 	}
 	
