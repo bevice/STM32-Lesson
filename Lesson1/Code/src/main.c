@@ -23,10 +23,10 @@ int main(void){
 		
 	GPIOC->BSRR |= GPIO_BSRR_BS8;
 	GPIOC->BSRR |= GPIO_BSRR_BR9;
-	delay(8000000);
+	delay(2000000);
 	GPIOC->BSRR |= GPIO_BSRR_BR8;
 	GPIOC->BSRR |= GPIO_BSRR_BS9;
-	delay(8000000);
+	delay(2000000);
 		
 	}
 	
