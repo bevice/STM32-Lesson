@@ -1,1 +1,4 @@
-InitSystemMCU.c:7:6:InitBaseGPIO	4	static
+InitSystemMCU.c:5:6:StartInitClock	4	static
+InitSystemMCU.c:34:6:EnableOutputMCO	4	static
+InitSystemMCU.c:50:6:InitBaseGPIO	4	static
+InitSystemMCU.c:61:6:LED1	16	static
