@@ -59,8 +59,8 @@ void InitGpioLTDC (void) {
 	GPIOG->MODER   |= GPIO_MODER_MODER12_1;		// Alternative PP
 	GPIOG->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR12;	// Very high speed
 
-	GPIOG->AFR[1] &= ~GPIO_AFRH_AFRH5_0;
-	GPIOG->AFR[1] |= GPIO_AFRH_AFRH5_1 | GPIO_AFRH_AFRH5_2 | GPIO_AFRH_AFRH5_3;		// Alternative function AF14 - LTDC
+	GPIOG->AFR[1] &= ~(GPIO_AFRH_AFRH5_1 | GPIO_AFRH_AFRH5_2);
+	GPIOG->AFR[1] |= GPIO_AFRH_AFRH5_0 | GPIO_AFRH_AFRH5_3;							// Alternative function AF9 - LTDC
 
 /***************** PK4 -> LTDC B5 *****************/
 
