@@ -1,3 +1,5 @@
-DisplayLTDC.c:6:6:InitGpioLTDC	4	static
-DisplayLTDC.c:296:6:DisplayEnable	16	static
-DisplayLTDC.c:309:6:DisplayLED	16	static
+DisplayLTDC.c:7:6:InitTFTdisplay	8	static
+DisplayLTDC.c:14:6:InitGpioLTDC	4	static
+DisplayLTDC.c:304:6:DisplayEnable	16	static
+DisplayLTDC.c:317:6:DisplayLED	16	static
+DisplayLTDC.c:330:6:InitDisplayLTDC	4	static

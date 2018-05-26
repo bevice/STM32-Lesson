@@ -5,8 +5,9 @@ int main (void) {
 	StartInitClock();
 	InitBaseGPIO();
 
-	EnableOutputMCO();
 	LED1(ON);
+
+	InitTFTdisplay();
 
 	while(1)
 	{
