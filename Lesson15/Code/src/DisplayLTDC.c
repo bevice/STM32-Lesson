@@ -350,16 +350,16 @@ void InitDisplayLTDC (void) {
 	LTDC->AWCR |= ((DISPLAY_WIDTH + DISPLAY_HSYNC + DISPLAY_HBP - 1) << 16 | (DISPLAY_HEIGHT + DISPLAY_VSYNC + DISPLAY_VBP - 1));
 	LTDC->TWCR |= ((DISPLAY_WIDTH + DISPLAY_HSYNC + DISPLAY_HBP + DISPLAY_HFP - 1) << 16 | (DISPLAY_HEIGHT + DISPLAY_VSYNC + DISPLAY_VBP + DISPLAY_VFP - 1));
 
-	LTDC->BCCR = 0; 																										// Color background
+	LTDC->BCCR &= ~0xFFFFFF; 																										// Color background
 
 	LTDC_Layer2->WHPCR |= (((DISPLAY_WIDTH + DISPLAY_HBP + DISPLAY_HSYNC - 1) << 16) | (DISPLAY_HBP + DISPLAY_HSYNC));		// Window width size (stop and start)
 	LTDC_Layer2->WVPCR |= (((DISPLAY_HEIGHT + DISPLAY_VSYNC + DISPLAY_VBP - 1) << 16) | (DISPLAY_VSYNC + DISPLAY_VBP));		// Window height size (stop and start)
 
-	LTDC_Layer2->PFCR = 0;																									// Format ARGB8888
+	LTDC_Layer2->PFCR &= ~0b111;																									// Format ARGB8888
 
 	LTDC_Layer2->CFBAR = (uint32_t)imageLayer1;																				// Address layer buffer display
 
-	LTDC_Layer2->CACR = 255;																								// Alpha constant
+	LTDC_Layer2->CACR |= 255;																								// Alpha constant
 	LTDC_Layer2->BFCR |= ((4 << 8) | 5);																					// Blending factors
 
 	LTDC_Layer2->CFBLR |= (((PIXEL_SIZE * DISPLAY_WIDTH) << 16) | (PIXEL_SIZE * DISPLAY_WIDTH + 3));						// Color frame buffer length
